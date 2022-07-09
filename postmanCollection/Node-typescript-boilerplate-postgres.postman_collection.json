@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "ceac308b-4ebe-4eb0-b12c-3380808ea824",
+		"name": "Node-typescript-boilerplate-postgres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12358364"
+	},
+	"item": [
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "get all role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http}}role/getall",
+							"host": [
+								"{{http}}role"
+							],
+							"path": [
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}role/create",
+							"host": [
+								"{{http}}role"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Chirag\",\r\n    \"lastName\": \"Mehta\",\r\n    \"email\": \"chiragmehta900@gmail.com\",\r\n    \"password\": \"qazxsw123\",\r\n    \"phoneNumber\": \"8460339810\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}user/create",
+							"host": [
+								"{{http}}user"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phonenumber\": \"8460339810\",\r\n    \"password\": \"qazxsw123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}user/login",
+							"host": [
+								"{{http}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzNlNGExLWNhOTktNDcxMC1iMDZiLTIxN2JiMmJlNmQxOSIsInBob25lbnVtYmVyIjoiODQ2MDMzOTgxMCIsInRva2VuVmVyc2lvbiI6MCwiaWF0IjoxNjU3MzU2NTQxLCJleHAiOjE2NTc5NjEzNDF9.WtKSGZNtQwx7UVlVDJ6hbYGlvAxI5qY_ogUi37pYMC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http}}user",
+							"host": [
+								"{{http}}user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http}}user/list",
+							"host": [
+								"{{http}}user"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzNlNGExLWNhOTktNDcxMC1iMDZiLTIxN2JiMmJlNmQxOSIsInBob25lbnVtYmVyIjoiODQ2MDMzOTgxMCIsInRva2VuVmVyc2lvbiI6MCwiaWF0IjoxNjU3MzU2NTQxLCJleHAiOjE2NTc5NjEzNDF9.WtKSGZNtQwx7UVlVDJ6hbYGlvAxI5qY_ogUi37pYMC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Chirag\",\r\n    \"lastName\": \"Mehta\",\r\n    \"email\": \"chiragmehta900@gmail.com\",\r\n    \"password\": \"qazxsw123\",\r\n    \"phoneNumber\": \"8460339810\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}user/update",
+							"host": [
+								"{{http}}user"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
